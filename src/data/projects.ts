@@ -40,7 +40,8 @@ export const projects = {
     {
       title: "ArtisansHub",
       image: Artisans,
-      link: "https://inventary-app.vercel.app/",
+      link: "https://artisanshub-vert.vercel.app/",
+      repo: "https://github.com/Mozzesdev/artisans-hub",
       tags: ["React", "Next.js", "TypeScript"],
       description:
         "App para conectar artesanos talentosos con amantes del arte.",
@@ -198,7 +199,8 @@ export const projects = {
     {
       title: "ArtisansHub",
       image: Artisans,
-      link: "https://inventary-app.vercel.app/",
+      link: "https://artisanshub-vert.vercel.app/",
+      repo: "https://github.com/Mozzesdev/artisans-hub",
       tags: ["React", "Next.js", "TypeScript"],
       description: "App connecting talented artisans with art lovers.",
       content: `
