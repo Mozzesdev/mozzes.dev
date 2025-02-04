@@ -1,5 +1,5 @@
-import { Language } from "@/i18n/types";
-import { useLanguage } from "@/i18n/useLanguage";
+import { Language } from "../i18n/types";
+import { useLanguage } from "../i18n/useLanguage";
 import { useEffect, useRef, useState } from "react";
 
 type Languages = { code: Language; name: string; flag: string }[];

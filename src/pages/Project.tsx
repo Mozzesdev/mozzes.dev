@@ -1,5 +1,5 @@
-import { projects } from "@/data/projects";
-import { useLanguage } from "@/i18n/useLanguage";
+import { projects } from "../data/projects";
+import { useLanguage } from "../i18n/useLanguage";
 import { ArrowLeft, Dock, Github } from "lucide-react";
 import { Link, Redirect, useRoute } from "wouter";
 

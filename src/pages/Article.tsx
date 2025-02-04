@@ -1,5 +1,5 @@
-import { posts } from "@/data/posts";
-import { useLanguage } from "@/i18n/useLanguage";
+import { posts } from "../data/posts";
+import { useLanguage } from "../i18n/useLanguage";
 import { ArrowLeft } from "lucide-react";
 import { Link, Redirect, useRoute } from "wouter";
 

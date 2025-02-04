@@ -1,5 +1,5 @@
-import { posts } from "@/data/posts";
-import { useLanguage } from "@/i18n/useLanguage";
+import { posts } from "../data/posts";
+import { useLanguage } from "../i18n/useLanguage";
 import { Link } from "wouter";
 
 export function Posts() {

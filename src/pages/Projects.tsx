@@ -1,5 +1,5 @@
-import { projects } from "@/data/projects";
-import { useLanguage } from "@/i18n/useLanguage";
+import { projects } from "../data/projects";
+import { useLanguage } from "../i18n/useLanguage";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";

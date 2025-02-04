@@ -1,8 +1,8 @@
 import { Linkedin } from "lucide-react";
-import yo from "@/assets/Yo.jpg";
-import Java from "@/icons/Java";
-import TS from "@/icons/Ts";
-import Python from "@/icons/Python";
+import yo from "../assets/Yo.webp";
+import Java from "../icons/Java";
+import TS from "../icons/Ts";
+import Python from "../icons/Python";
 
 export function Hero() {
   const name = "Moisés Zambrano";

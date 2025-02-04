@@ -1,4 +1,4 @@
-import yo from "@/assets/Yo.jpg";
+import yo from "../assets/Yo.webp";
 
 export function AboutMe() {
   return (

@@ -1,13 +1,13 @@
-import vDownloader from "@/assets/VDownloader.png";
-import Artisans from "@/assets/Artisans.png";
-import AHMedical from "@/assets/ah.png";
-import Giphy from "@/assets/giffy.png";
+import vdownloader from "../assets/vdownloader.webp";
+import Artisans from "../assets/Artisans.webp";
+import AHMedical from "../assets/ah.webp";
+import Giphy from "../assets/giffy.webp";
 
 export const projects = {
   es: [
     {
       title: "VDownloader",
-      image: vDownloader,
+      image: vdownloader,
       tags: ["React", "Electron", "TypeScript", "Tailwind", "Node"],
       link: "https://github.com/Mozzesdev/VDownloader",
       repo: "https://github.com/Mozzesdev/VDownloader",
@@ -165,7 +165,7 @@ export const projects = {
   en: [
     {
       title: "VDownloader",
-      image: vDownloader,
+      image: vdownloader,
       tags: ["React", "Electron", "TypeScript", "Tailwind", "Node"],
       link: "https://github.com/Mozzesdev/VDownloader",
       repo: "https://github.com/Mozzesdev/VDownloader",

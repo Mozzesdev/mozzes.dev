@@ -1,10 +1,10 @@
-import { AboutMe } from "@/components/about";
-import { Contact } from "@/components/contact";
-import { Hero } from "@/components/hero";
-import { Posts } from "@/components/posts";
-import { Projects } from "@/components/projects";
-import { Skills } from "@/components/skills";
-import { PARTICLES_OPTIONS } from "@/const";
+import { AboutMe } from "../components/about";
+import { Contact } from "../components/contact";
+import { Hero } from "../components/hero";
+import { Posts } from "../components/posts";
+import { Projects } from "../components/projects";
+import { Skills } from "../components/skills";
+import { PARTICLES_OPTIONS } from "../const";
 import { Container } from "@tsparticles/engine";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useState } from "react";

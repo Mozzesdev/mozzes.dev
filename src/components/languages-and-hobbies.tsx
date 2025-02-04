@@ -1,4 +1,4 @@
-import { languages } from "@/data/personal-info"
+import { languages } from "../data/personal-info"
 
 export function LanguagesAndHobbies() {
   return (

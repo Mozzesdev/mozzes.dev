@@ -1,4 +1,4 @@
-import { useTranslate } from "@/i18n/useTranslate";
+import { useTranslate } from "../i18n/useTranslate";
 import LanguageSwitcher from "./langswitcher";
 
 export function Footer() {

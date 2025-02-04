@@ -1,6 +1,6 @@
-import { categories } from "@/data/categories";
-import { posts } from "@/data/posts";
-import { useLanguage } from "@/i18n/useLanguage";
+import { categories } from "../data/categories";
+import { posts } from "../data/posts";
+import { useLanguage } from "../i18n/useLanguage";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";

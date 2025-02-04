@@ -1,7 +1,7 @@
-import { projects } from "@/data/projects";
+import { projects } from "../data/projects";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { useLanguage } from "@/i18n/useLanguage";
+import { useLanguage } from "../i18n/useLanguage";
 import { Link } from "wouter";
 
 export function Projects() {

@@ -1,10 +1,30 @@
+import { useState, useEffect } from "react";
+import Navbar from "./navbar";
 import { Link } from "wouter";
-import NavBar from "./navbar";
 
 export function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="px-6 pt-6 relative">
-      <div className="max-w-6xl mx-auto flex items-center justify-between pb-6 relative z-10">
+    <header
+      className={`px-6 py-5 sticky top-0 z-20 transition-colors duration-300 ${
+        isScrolled ? "bg-[#ffffffe9] shadow-md" : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto flex items-center justify-between relative z-10">
         <Link
           href="/"
           className="text-xl font-bold relative group animate-entrance"
@@ -16,9 +36,8 @@ export function Header() {
             MOZZES
           </span>
         </Link>
-        <NavBar />
+        <Navbar />
       </div>
     </header>
   );
 }
-

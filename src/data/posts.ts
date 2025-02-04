@@ -1,4 +1,4 @@
-import { highlightCode } from "@/utils";
+import { highlightCode } from "../utils";
 
 export const posts = {
   en: [
