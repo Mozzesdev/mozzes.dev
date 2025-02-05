@@ -2,10 +2,12 @@ import { posts } from "../data/posts";
 import { useLanguage } from "../i18n/useLanguage";
 import { ArrowLeft } from "lucide-react";
 import { Link, Redirect, useRoute } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 const Article = () => {
   const [, params] = useRoute("/blog/:id");
   const { language } = useLanguage();
+  const t = useTranslate();
   const tPosts = posts[language];
   const post = tPosts.find((post) => post.path === params?.id);
 
@@ -41,7 +43,7 @@ const Article = () => {
           dangerouslySetInnerHTML={{ __html: post?.content ?? "" }}
         ></div>
         <p className="text-center my-10 text-zinc-800">
-          And that's it. Hope you learned something!
+          {t("hope_learn")}
         </p>
       </div>
     </section>

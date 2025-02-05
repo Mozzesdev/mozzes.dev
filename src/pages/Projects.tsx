@@ -3,12 +3,14 @@ import { useLanguage } from "../i18n/useLanguage";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 const Projects = () => {
   const [searchValue, setSearchValue] = useState("");
   const [focus, setFocus] = useState(false);
   const { language } = useLanguage();
   const [proje, setProje] = useState(projects[language]);
+  const t = useTranslate();
 
   useEffect(() => {
     setProje(projects[language]);
@@ -33,11 +35,11 @@ const Projects = () => {
 
   return (
     <main className="mx-auto py-4 mb-10 md:px-0 px-2">
-      <title>Projects | Mozzesdev</title>
+      <title>{`${t("projects.title")} | Mozzesdev`}</title>
       <div className="mb-5">
-        <h1 className="text-4xl mb-2 text-zinc-800">Projects</h1>
+        <h1 className="text-4xl mb-2 text-zinc-800">{t("projects.title")}</h1>
         <p className="text-zinc-500 text-sm">
-          Sharing thoughts and experiences about technology and development
+        {t("projects.featured_3")}
         </p>
       </div>
       <div className="relative mb-8">
@@ -58,7 +60,7 @@ const Projects = () => {
               (focus || searchValue) && "opacity-0"
             }`}
           >
-            Search article
+            {t("search.project")}
           </span>
           <input
             autoComplete="off"

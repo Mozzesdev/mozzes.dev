@@ -18,6 +18,10 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const goToTop = () => {
+    window.scrollTo({ behavior: "smooth", top: 0 });
+  };
+
   return (
     <header
       className={`px-6 py-5 sticky top-0 z-20 transition-colors duration-300 ${
@@ -28,6 +32,7 @@ export function Header() {
         <Link
           href="/"
           className="text-xl font-bold relative group animate-entrance"
+          onClick={goToTop}
         >
           <span className="text-g-blue z-[1] inline-block relative group-hover:-translate-y-[8%] group-hover:duration-150 duration-500">
             MOZZES

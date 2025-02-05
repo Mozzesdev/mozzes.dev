@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { FileJson, Database, GitBranch } from "lucide-react";
+import { useTranslate } from "../i18n/useTranslate";
 
 type Skill = {
   id: string;
@@ -23,6 +24,8 @@ export function Skills() {
   const [targetId, setTargetId] = useState<string | null>(null);
   const dragItem = useRef<number | null>(null);
   const dragOverItem = useRef<number | null>(null);
+
+  const t = useTranslate();
 
   const skillIcons = {
     React: <div className="w-5 h-5 mr-2">⚛️</div>,
@@ -78,7 +81,7 @@ export function Skills() {
   return (
     <section className="px-6 py-12 relative z-10">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-light mb-8">Skills</h2>
+        <h2 className="text-5xl font-light mb-8">{t("skills.title")}</h2>
         <div className="flex flex-wrap gap-4">
           {skills.map((skill, index) => (
             <div

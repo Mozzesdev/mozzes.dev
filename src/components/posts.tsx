@@ -1,19 +1,21 @@
 import { posts } from "../data/posts";
 import { useLanguage } from "../i18n/useLanguage";
 import { Link } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 export function Posts() {
   const { language } = useLanguage();
+  const t = useTranslate();
   const tPosts = posts[language];
 
   return (
     <section className="px-6 pt-12 pb-8 z-10 relative">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl mb-4 text-zinc-800 font-light">
-          Recent <span className="block ml-14 pt-2">Posts</span>
+          {t("posts.recent")} <span className="block ml-14 pt-2">{t("posts.recent_2")}</span>
         </h2>
         <p className="text-zinc-500 mb-6 text-sm">
-          I was write about stuff I'm learning this fun.
+        {t("posts.recent_3")}
         </p>
         <div className="space-y-6">
           {tPosts.map((post) => (
@@ -28,7 +30,7 @@ export function Posts() {
           ))}
         </div>
         <Link href="/blog" className="inline-block mt-8 text-blue-600 hover:underline">
-          All posts →
+          {t("posts.all_posts")} →
         </Link>
       </div>
     </section>

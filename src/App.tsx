@@ -6,6 +6,7 @@ import Article from "./pages/Article";
 import { useEffect } from "react";
 import Projects from "./pages/Projects";
 import Project from "./pages/Project";
+import PdfView from "./pages/PdfView";
 
 export default function App() {
   const [location] = useLocation();
@@ -15,37 +16,50 @@ export default function App() {
   }, [location]);
 
   return (
-    <Layout>
-      <Switch>
-        <Route path="/" component={Home}></Route>
-        <Route path="blog">
+    <Switch>
+      <Route path="/">
+        <Layout>
+          <Home />
+        </Layout>
+      </Route>
+      <Route path="/cv" component={PdfView} />
+      <Route path="blog">
+        <Layout>
           <div className="max-w-6xl mx-auto min-h-[calc(100dvh-76px)]">
             <Blog />
           </div>
-        </Route>
-        <Route path={`/blog/:id`}>
+        </Layout>
+      </Route>
+      <Route path={`/blog/:id`}>
+        <Layout>
           <div className="max-w-6xl mx-auto min-h-[calc(100dvh-76px)]">
             <Article />
           </div>
-        </Route>
-        <Route path={`/projects`}>
+        </Layout>
+      </Route>
+      <Route path={`/projects`}>
+        <Layout>
           <div className="max-w-6xl mx-auto min-h-[calc(100dvh-76px)]">
             <Projects />
           </div>
-        </Route>
-        <Route path={`/projects/:id`}>
+        </Layout>
+      </Route>
+      <Route path={`/projects/:id`}>
+        <Layout>
           <div className="max-w-6xl mx-auto min-h-[calc(100dvh-76px)]">
             <Project />
           </div>
-        </Route>
-        <Route path="*">
-          {(params) => (
+        </Layout>
+      </Route>
+      <Route path="*">
+        {(params) => (
+          <Layout>
             <div className="max-w-6xl mx-auto min-h-[calc(100dvh-132px)] flex items-center justify-center">
               <p className="text-3xl mb-12 text-zinc-800">{`404, Sorry the page ${params["*"]} does not exist!`}</p>
             </div>
-          )}
-        </Route>
-      </Switch>
-    </Layout>
+          </Layout>
+        )}
+      </Route>
+    </Switch>
   );
 }

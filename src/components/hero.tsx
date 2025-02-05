@@ -3,8 +3,11 @@ import yo from "../assets/Yo.webp";
 import Java from "../icons/Java";
 import TS from "../icons/Ts";
 import Python from "../icons/Python";
+import { useTranslate } from "../i18n/useTranslate";
 
 export function Hero() {
+  const t = useTranslate();
+
   const name = "Moisés Zambrano";
   return (
     <section className="px-2 py-12 md:px-6 relative z-10">
@@ -60,7 +63,7 @@ export function Hero() {
               className="text-gray-600 letter-entrance"
               style={{ animationDelay: "1s" }}
             >
-              <span className="animate-wave-hand">👋</span> Hello there! I am
+              <span className="animate-wave-hand">👋</span> {t("welcome")}
             </p>
             <h1 className="text-6xl md:text-7xl font-bold break-keep whitespace-normal relative z-10">
               {name.split(" ").map((word, wordIndex, wordsArray) => {
@@ -111,11 +114,7 @@ export function Hero() {
               className="text-gray-600 max-w-xl animate-entrance"
               style={{ animationDelay: "1s" }}
             >
-              Experienced Full Stack Developer with over 3 years of expertise in
-              designing, developing, and deploying end-to-end web solutions.
-              Proficient in both frontend and backend development, with a strong
-              command of modern frameworks, RESTful API integration, and
-              database architectures.
+              {t("resume")}
             </p>
             <div
               className="flex gap-4 animate-entrance"
@@ -123,7 +122,7 @@ export function Hero() {
             >
               <a href="#contact">
                 <button className="bg-blue-600 cursor-pointer text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
-                  Let's Talk
+                  {t("lets_talk")}
                 </button>
               </a>
               <a

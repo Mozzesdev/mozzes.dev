@@ -4,6 +4,7 @@ import { useLanguage } from "../i18n/useLanguage";
 import { Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Posts");
@@ -11,6 +12,8 @@ const Blog = () => {
   const [focus, setFocus] = useState(false);
   const { language } = useLanguage();
   const [articles, setArticles] = useState(posts[language]);
+
+  const t = useTranslate();
 
   useEffect(() => {
     setArticles(posts[language]);
@@ -47,12 +50,10 @@ const Blog = () => {
 
   return (
     <main className="mx-auto py-4 mb-10 md:px-0 px-2">
-      <title>Blog | Mozzesdev</title>
+      <title>{`${t("blog.title")} | Mozzesdev`}</title>
       <div className="mb-5">
         <h1 className="text-4xl mb-2 text-zinc-800">Blog</h1>
-        <p className="text-zinc-500 text-sm">
-          Sharing thoughts and experiences about technology and development
-        </p>
+        <p className="text-zinc-500 text-sm">{t("blog.des")}</p>
       </div>
       <div className="relative mb-8">
         <label
@@ -72,7 +73,7 @@ const Blog = () => {
               (focus || searchValue) && "opacity-0"
             }`}
           >
-            Search article
+            {t("search.article")}
           </span>
           <input
             autoComplete="off"
@@ -88,7 +89,9 @@ const Blog = () => {
         </label>
         <div className="flex gap-2">
           {categories
-            .filter((cat) => posts[language].some((post) => post.category === cat.name))
+            .filter((cat) =>
+              posts[language].some((post) => post.category === cat.name)
+            )
             .map((category) => (
               <button
                 key={category.id}

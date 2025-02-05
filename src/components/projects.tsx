@@ -3,19 +3,21 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n/useLanguage";
 import { Link } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 export function Projects() {
   const { language } = useLanguage();
+  const t = useTranslate();
   const tProjects = projects[language];
   return (
     <section className="px-6 py-12 bg-gray-50 relative z-10" id="portfolio">
       <div className="max-w-6xl mx-auto relative">
         <div className="absolute left-0 top-0">
           <h2 className="text-5xl mb-4 text-zinc-800 font-light overflow-hidden">
-            Featured <span className="block ml-16 pt-2">Projects</span>
+            {t("projects.featured")} <span className="block ml-16 pt-2">{t("projects.featured_2")}</span>
           </h2>
           <p className="text-zinc-500 mb-6 text-sm">
-            Some own projects made by myself. 💻
+            {t("projects.featured_3")}
           </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">

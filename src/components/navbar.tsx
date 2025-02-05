@@ -1,5 +1,6 @@
-import { useState, useRef, useCallback } from "react";
-import { Link } from "wouter";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { useTranslate } from "../i18n/useTranslate";
 
 const Navbar = () => {
   const [underline, setUnderline] = useState({
@@ -9,6 +10,31 @@ const Navbar = () => {
   });
   const navRef = useRef(null);
   const itemsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+  const t = useTranslate();
+
+  const [location] = useLocation();
+
+  useEffect(() => {
+    setTimeout(() => {
+      const hash = window.location.hash;
+
+      if (hash === "#about") {
+        const aboutSection = document.getElementById("about");
+        if (aboutSection) {
+          aboutSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    }, 0);
+  }, [location]);
+
+  const goToAbout = () => {
+    if (location === "/") {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   const updateUnderline = useCallback((target: any) => {
     const navRect = (navRef.current as any).getBoundingClientRect();
@@ -49,17 +75,18 @@ const Navbar = () => {
     >
       <ul className="flex gap-6">
         <li>
-          <a
+          <Link
             ref={(el) => (itemsRef.current[0] = el)}
             onMouseEnter={(e) => updateUnderline(e.target)}
-            href="#about"
+            href="/#about"
             className="text-gray-600 hover:text-blue-600 text-sm relative block"
+            onClick={goToAbout}
           >
-            About
-          </a>
+            {t("about")}
+          </Link>
         </li>
         {[
-          { key: "Projects", link: "/projects" },
+          { key: t("projects.title"), link: "/projects" },
           { key: "Blog", link: "/blog" },
         ].map((item, index) => (
           <li key={item.key}>
